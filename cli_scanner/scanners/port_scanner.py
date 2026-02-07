@@ -19,6 +19,10 @@ class PortScanner(BaseScanner):
                 capture_output = True,
                 text=True
             )
+            
+            if self.verbose:
+                print("   --> Port Scan Completed, analyzing results...")
+                
             for line in result.stdout.splitlines():
                 for port, reason in RISKY_PORTS.items():
                     if f":{port} " in line or f":{port}\n" in line:
@@ -34,6 +38,13 @@ class PortScanner(BaseScanner):
                 "type": "port",
                 "severity": "LOW",
                 "message": "ss command not available on this system"
+            })
+
+        if not findings:
+            findings.append({
+                "type": "port",
+                "severity": "LOW",
+                "message": "No risky open ports detected"
             })
 
         return findings
