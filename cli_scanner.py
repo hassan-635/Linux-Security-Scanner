@@ -7,7 +7,7 @@ def main():
     parser.add_argument("--verbose", action = "store_true")
     args = parser.parse_args()
 
-    scanners = [DummyScanner()]
+    scanners = [DummyScanner(verbose = args.verbose)]
     runner = ScanRunner(scanners, verbose = args.verbose)
 
     results = runner.run()
