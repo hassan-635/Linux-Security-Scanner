@@ -1,5 +1,5 @@
 class ScanRunner:
-    def __init__(self, scanners, verbose = false):
+    def __init__(self, scanners, verbose = False):
         self.scanners = scanners
         self.verbose = verbose
 
