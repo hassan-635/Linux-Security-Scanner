@@ -1,13 +1,14 @@
 import argparse
 from cli_scanner.core.runner import ScanRunner
 from cli_scanner.scanners.port_scanner import PortScanner
+from cli_scanner.scanners.file_perm_scanner import FilePermissionsScanner
 
 def main():
     parser = argparse.ArgumentParser(description = "CLI Linux Security Scanner")
     parser.add_argument("--verbose", action = "store_true")
     args = parser.parse_args()
 
-    scanners = [PortScanner(verbose = args.verbose)]
+    scanners = [PortScanner(verbose = args.verbose), FilePermissionsScanner(verbose=args.verbose)]
     runner = ScanRunner(scanners, verbose = args.verbose)
 
     results = runner.run()
