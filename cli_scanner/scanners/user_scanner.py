@@ -56,7 +56,6 @@ class UserScanner(BaseScanner):
             "examples": login_users[:5]
         })
 
-        # Shadow file permission check (no password cracking)
         shadow = Path("/etc/shadow")
         if shadow.exists() and shadow.stat().st_mode & 0o077:
             findings.append({
