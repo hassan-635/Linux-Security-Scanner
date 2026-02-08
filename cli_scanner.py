@@ -6,6 +6,7 @@ from cli_scanner.scanners.suid_scanner import SUIDScanner
 from cli_scanner.scanners.user_scanner import UserScanner
 
 
+
 def main():
     parser = argparse.ArgumentParser(description = "CLI Linux Security Scanner")
     parser.add_argument("--verbose", action = "store_true")
