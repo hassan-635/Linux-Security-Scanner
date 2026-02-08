@@ -32,21 +32,21 @@ class FilePermissionsScanner(BaseScanner):
             except subprocess.TimeoutExpired:
                 findings.append({
                     "type": "file_permission",
-                    "severity": "low",
+                    "severity": "LOW",
                     "message": f"Scan timed out for {path}"
                 })
 
             except Exception as e:
                 findings.append({
                    "type": "file_permission",
-                    "severity": "low",
+                    "severity": "LOW",
                     "message": f"Failed Scanning {path}: {str(e)}" 
                 })
 
         if not findings:
             findings.append({
                 "type": "file_permission",
-                "severity": "low",
+                "severity": "LOW",
                 "message": f"No world-writable files detected"
             })
 
