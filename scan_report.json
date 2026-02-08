@@ -1,39 +1,38 @@
 [
     {
-        "type": "port",
         "severity": "LOW",
-        "message": "No risky open ports detected"
+        "title": "No risky open ports detected",
+        "description": "No risky open ports detected",
+        "remediation": "-"
     },
     {
-        "type": "file_permission",
         "severity": "LOW",
-        "message": "No world-writable files detected"
+        "title": "No world-writable files detected",
+        "description": "No world-writable files detected",
+        "remediation": "-"
     },
     {
-        "type": "suid",
-        "severity": "LOW",
-        "message": "SUID scan timed out"
-    },
-    {
-        "type": "user",
-        "severity": "LOW",
-        "message": "Only one UID 0 user present"
-    },
-    {
-        "type": "user",
-        "severity": "LOW",
-        "message": "42 users have login shells",
-        "examples": [
-            "root",
-            "daemon",
-            "bin",
-            "sys",
-            "sync"
-        ]
-    },
-    {
-        "type": "user",
         "severity": "HIGH",
-        "message": "/etc/shadow permissions are too open"
+        "title": "75 uncommon SUID/SGID files detected",
+        "description": "75 uncommon SUID/SGID files detected",
+        "remediation": "-"
+    },
+    {
+        "severity": "LOW",
+        "title": "Only one UID 0 user present",
+        "description": "Only one UID 0 user present",
+        "remediation": "-"
+    },
+    {
+        "severity": "LOW",
+        "title": "42 users have login shells",
+        "description": "42 users have login shells",
+        "remediation": "-"
+    },
+    {
+        "severity": "HIGH",
+        "title": "/etc/shadow permissions are too open",
+        "description": "/etc/shadow permissions are too open",
+        "remediation": "-"
     }
 ]

@@ -1,11 +1,21 @@
 import csv
-from pathlib import Path
 
 def generate_csv_report(findings, output_file="scan_report.csv"):
-    report_path = Path(output_file)
-    with report_path.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["severity","title","description","remediation"])
+    fieldnames = ["severity", "title", "description", "remediation"]
+    with open(output_file, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         for item in findings:
             writer.writerow(item)
-    print(f"[INFO] CSV report saved to {report_path.resolve()}")
+    print(f"[INFO] CSV report saved to {output_file}")
+
+
+def generate_summary(findings):
+    summary = {"CRITICAL": 0, "HIGH": 0, "MEDIUM": 0, "LOW": 0}
+    for f in findings:
+        sev = f.get("severity", "LOW").upper()
+        if sev in summary:
+            summary[sev] += 1
+        else:
+            summary[sev] = 1
+    return summary

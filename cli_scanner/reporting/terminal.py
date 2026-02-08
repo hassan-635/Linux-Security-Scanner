@@ -33,7 +33,6 @@ def print_findings(findings):
     table.add_column("Severity", style="bold")
     table.add_column("Title")
     table.add_column("Description")
-    table.add_column("Remediation")
 
     for f in findings:
         sev = f.get("severity", "LOW")
@@ -43,7 +42,6 @@ def print_findings(findings):
             sev,
             f.get("title", "-"),
             f.get("description", "-"),
-            f.get("remediation", "-"),
             style=color
         )
 

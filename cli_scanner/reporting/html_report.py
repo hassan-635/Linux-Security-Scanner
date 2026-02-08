@@ -1,11 +1,13 @@
-from jinja2 import Environment, FileSystemLoader
 from pathlib import Path
+from jinja2 import Environment, FileSystemLoader
 
-def generate_html_report(findings, output_file="scan_report.html"):
-    env = Environment(loader=FileSystemLoader("templates"))
+env = Environment(loader=FileSystemLoader("cli_scanner/templates"))
+
+def generate_html_report(findings, summary=None, output_file="scan_report.html"):
+
     template = env.get_template("report_template.html")
-    html_content = template.render(findings=findings)
-    
+    html_content = template.render(findings=findings, summary=summary or {})
+
     report_path = Path(output_file)
     report_path.write_text(html_content)
     print(f"[INFO] HTML report saved to {report_path.resolve()}")

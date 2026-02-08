@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CLI Security Scanner Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        h1, h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>CLI Security Scanner Report</h1>
+
+    <h2>Summary:</h2>
+    <p>CRITICAL: {{ summary.CRITICAL or 0 }}</p>
+    <p>HIGH: {{ summary.HIGH or 0 }}</p>
+    <p>MEDIUM: {{ summary.MEDIUM or 0 }}</p>
+    <p>LOW: {{ summary.LOW or 0 }}</p>
+
+    <h2>Security Findings:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Severity</th>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for f in findings %}
+            <tr>
+                <td>{{ f.severity }}</td>
+                <td>{{ f.title }}</td>
+                <td>{{ f.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,1 +1,7 @@
 severity,title,description,remediation
+LOW,No risky open ports detected,No risky open ports detected,-
+LOW,No world-writable files detected,No world-writable files detected,-
+HIGH,75 uncommon SUID/SGID files detected,75 uncommon SUID/SGID files detected,-
+LOW,Only one UID 0 user present,Only one UID 0 user present,-
+LOW,42 users have login shells,42 users have login shells,-
+HIGH,/etc/shadow permissions are too open,/etc/shadow permissions are too open,-

@@ -9,6 +9,7 @@ from cli_scanner.reporting.terminal import generate_terminal_report
 from cli_scanner.reporting.html_report import generate_html_report
 from cli_scanner.reporting.json_report import generate_json_report
 from cli_scanner.core.utils import generate_summary
+from cli_scanner.core.utils import normalize_findings
 
 
 
@@ -27,6 +28,7 @@ def main():
 
     runner = ScanRunner(scanners, verbose=args.verbose)
     results = runner.run()
+    results = normalize_findings(results)
     summary = generate_summary(results)
 
     print("\nScan Results:")

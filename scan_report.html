@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CLI Security Scanner Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        h1, h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>CLI Security Scanner Report</h1>
+
+    <h2>Summary:</h2>
+    <p>CRITICAL: 0</p>
+    <p>HIGH: 0</p>
+    <p>MEDIUM: 0</p>
+    <p>LOW: 0</p>
+
+    <h2>Security Findings:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Severity</th>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>LOW</td>
+                <td>No risky open ports detected</td>
+                <td>No risky open ports detected</td>
+            </tr>
+            
+            <tr>
+                <td>LOW</td>
+                <td>No world-writable files detected</td>
+                <td>No world-writable files detected</td>
+            </tr>
+            
+            <tr>
+                <td>HIGH</td>
+                <td>75 uncommon SUID/SGID files detected</td>
+                <td>75 uncommon SUID/SGID files detected</td>
+            </tr>
+            
+            <tr>
+                <td>LOW</td>
+                <td>Only one UID 0 user present</td>
+                <td>Only one UID 0 user present</td>
+            </tr>
+            
+            <tr>
+                <td>LOW</td>
+                <td>42 users have login shells</td>
+                <td>42 users have login shells</td>
+            </tr>
+            
+            <tr>
+                <td>HIGH</td>
+                <td>/etc/shadow permissions are too open</td>
+                <td>/etc/shadow permissions are too open</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</body>
+</html>
